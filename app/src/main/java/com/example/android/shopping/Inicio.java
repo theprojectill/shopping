@@ -1,9 +1,14 @@
 package com.example.android.shopping;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class Inicio extends ActionBarActivity {
@@ -12,6 +17,19 @@ public class Inicio extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
+
+        final Button boton = (Button) findViewById(R.id.button2);
+        boton.setOnClickListener (new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent cambiar = new Intent(Inicio.this, Reportar.class);
+                startActivity(cambiar);
+            }
+        });
+
+
     }
 
 
@@ -36,4 +54,5 @@ public class Inicio extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }
