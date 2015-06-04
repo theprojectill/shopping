@@ -17,6 +17,9 @@ public class Reportar extends ActionBarActivity
     Spinner lista;
     String[] datos = {"Baños", "PaCo", "Mall"};
 
+    Spinner lista2;
+    String[] datos2 = {"Planta Baja", "Piso 1", "Piso 2"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -35,8 +38,10 @@ public class Reportar extends ActionBarActivity
         {
 
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                switch (position) {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+                switch (position)
+                {
                     case 0:
                         Toast to = Toast.makeText(getApplicationContext(), datos[position], Toast.LENGTH_LONG);
                         to.show();
@@ -60,7 +65,52 @@ public class Reportar extends ActionBarActivity
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
+            public void onNothingSelected(AdapterView<?> parent)
+            {
+
+            }
+        });
+
+
+
+        lista2 = (Spinner)findViewById(R.id.spinner2);
+
+        ArrayAdapter<String> adaptador2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datos2);
+        lista2.setAdapter(adaptador2);
+
+        lista2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+                switch (position)
+                {
+                    case 0:
+                        Toast to = Toast.makeText(getApplicationContext(), datos2[position], Toast.LENGTH_LONG);
+                        to.show();
+                        break;
+
+                    case 1:
+                        Toast t = Toast.makeText(getApplicationContext(), datos2[position], Toast.LENGTH_LONG);
+                        t.show();
+                        break;
+
+                    case 2:
+                        Toast po = Toast.makeText(getApplicationContext(), datos2[position], Toast.LENGTH_LONG);
+                        po.show();
+                        break;
+
+                    case 3:
+                        Toast p = Toast.makeText(getApplicationContext(), datos2[position], Toast.LENGTH_LONG);
+                        p.show();
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent)
+            {
 
             }
         });
