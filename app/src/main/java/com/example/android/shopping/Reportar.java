@@ -1,7 +1,9 @@
 package com.example.android.shopping;
 
+import android.content.Intent;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 import android.support.v7.app.ActionBarActivity;
@@ -26,8 +28,27 @@ public class Reportar extends ActionBarActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reportar);
 
-        //super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_main);
+        final Button boton = (Button) findViewById(R.id.button14);
+        boton.setOnClickListener (new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent cambiar = new Intent(Reportar.this, Reportar2.class);
+                startActivity(cambiar);
+            }
+        });
+
+        final Button boton2 = (Button) findViewById(R.id.button13);
+        boton2.setOnClickListener (new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent cambiar = new Intent(Reportar.this, Inicio.class);
+                startActivity(cambiar);
+            }
+        });
 
         lista = (Spinner)findViewById(R.id.spinner);
 
