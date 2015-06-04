@@ -3,18 +3,19 @@ package com.example.android.shopping;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.text.TextWatcher;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
 public class Reportar3 extends ActionBarActivity
 {
-    EditText editText3;
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -27,7 +28,7 @@ public class Reportar3 extends ActionBarActivity
             @Override
             public void onClick(View view)
             {
-                Toast.makeText(getApplicationContext(), "Incidente enviado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Incidente Enviado", Toast.LENGTH_SHORT).show();
                 Intent cambiar = new Intent(Reportar3.this, Inicio.class);
                 startActivity(cambiar);
             }
@@ -44,10 +45,29 @@ public class Reportar3 extends ActionBarActivity
             }
         });
 
-        if(editText3 != null)
+        boton2.setClickable(false);
+
+        EditText editText3 = (EditText) findViewById(R.id.editText3);
+        editText3.addTextChangedListener(new TextWatcher()
         {
-            boton2.isClickable();
-        }
+
+            public void afterTextChanged(Editable s)
+            {
+
+            }
+
+            public void beforeTextChanged(CharSequence s, int start, int count, int after)
+            {
+
+            }
+
+            public void onTextChanged(CharSequence s, int start, int before, int count)
+            {
+                TextView editText3 = (TextView) findViewById(R.id.editText3);
+                editText3.setText(s);
+                boton2.setClickable(true);
+            }
+        });
     }
 
 
