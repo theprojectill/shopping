@@ -1,9 +1,14 @@
 package com.example.android.shopping;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -12,6 +17,26 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button boton = (Button) findViewById(R.id.button);
+        boton.setOnClickListener (new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                String usuario = ((EditText)findViewById(R.id.editText)).getText().toString();
+                String contraseña = ((EditText)findViewById(R.id.editText2)).getText().toString();
+                if (usuario.equals("admin")&& contraseña.equals("admin"))
+                {
+                    Intent nuevoformulario = new Intent(MainActivity.this, Inicio.class);
+                    startActivity(nuevoformulario);
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(), "Usuario Incorrecto", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
 
