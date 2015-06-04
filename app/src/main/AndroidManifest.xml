@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.android.shopping" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Reportar"
+            android:label="@string/title_activity_reportar" >
+        </activity>
+        <activity
+            android:name=".Resolver"
+            android:label="@string/title_activity_resolver" >
+        </activity>
+        <activity
+            android:name=".Revisar"
+            android:label="@string/title_activity_revisar" >
+        </activity>
+        <activity
+            android:name=".Inicio"
+            android:label="@string/title_activity_inicio" >
+        </activity>
+        <activity
+            android:name=".Resolver2"
+            android:label="@string/title_activity_resolver2" >
+        </activity>
+        <activity
+            android:name=".Revisar2"
+            android:label="@string/title_activity_revisar2" >
+        </activity>
+        <activity
+            android:name=".Reportar2"
+            android:label="@string/title_activity_reportar2" >
+        </activity>
+        <activity
+            android:name=".Reportar3"
+            android:label="@string/title_activity_reportar3" >
+        </activity>
+    </application>
+
+</manifest>
