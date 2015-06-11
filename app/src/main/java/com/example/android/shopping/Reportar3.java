@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.text.TextWatcher;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,8 +23,8 @@ public class Reportar3 extends ActionBarActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reportar3);
 
-        final Button boton = (Button) findViewById(R.id.button25);
-        boton.setOnClickListener (new View.OnClickListener()
+        final ImageButton btn_enviar = (ImageButton) findViewById(R.id.btn_enviar);
+        btn_enviar.setOnClickListener (new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
@@ -34,8 +35,8 @@ public class Reportar3 extends ActionBarActivity
             }
         });
 
-        final Button boton2 = (Button) findViewById(R.id.button24);
-        boton2.setOnClickListener (new View.OnClickListener()
+        final ImageButton btn_volver = (ImageButton) findViewById(R.id.btn_volver);
+        btn_enviar.setOnClickListener (new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
@@ -45,7 +46,7 @@ public class Reportar3 extends ActionBarActivity
             }
         });
 
-        boton2.setClickable(false);
+        btn_volver.setClickable(false);
 
         EditText editText3 = (EditText) findViewById(R.id.editText3);
         editText3.addTextChangedListener(new TextWatcher()
@@ -65,7 +66,7 @@ public class Reportar3 extends ActionBarActivity
             {
                 TextView editText3 = (TextView) findViewById(R.id.editText3);
                 editText3.setText(s);
-                boton2.setClickable(true);
+                btn_volver.setClickable(true);
             }
         });
     }

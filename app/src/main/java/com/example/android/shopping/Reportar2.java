@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -24,8 +25,8 @@ public class Reportar2 extends ActionBarActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reportar2);
 
-        final Button boton = (Button) findViewById(R.id.button15);
-        boton.setOnClickListener (new View.OnClickListener()
+        final ImageButton btn_siguiente = (ImageButton) findViewById(R.id.btn_siguiente);
+        btn_siguiente.setOnClickListener (new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
@@ -35,8 +36,8 @@ public class Reportar2 extends ActionBarActivity
             }
         });
 
-        final Button boton2 = (Button) findViewById(R.id.button19);
-        boton2.setOnClickListener (new View.OnClickListener()
+        final ImageButton btn_volver = (ImageButton) findViewById(R.id.btn_volver);
+        btn_volver.setOnClickListener (new View.OnClickListener()
         {
             @Override
             public void onClick(View view)

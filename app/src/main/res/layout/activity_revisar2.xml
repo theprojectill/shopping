@@ -4,38 +4,38 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.example.android.shopping.Revisar2">
+    tools:context="com.example.android.shopping.Revisar2"
+    android:background="@drawable/fondo">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Volver"
-        android:id="@+id/button10"
+    <ImageButton
+        android:layout_width="170dp"
+        android:layout_height="90dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textSize="30dp" />
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/tinynote_volver"
+        android:id="@+id/btn_volver"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Abrir"
-        android:id="@+id/button11"
-        android:layout_above="@+id/button10"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="33dp"
-        android:textSize="30dp" />
+    <ImageButton
+        android:layout_width="170dp"
+        android:layout_height="90dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/tinynote_abrir"
+        android:layout_marginBottom="100dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/btn_abrir"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cerrar"
-        android:id="@+id/button12"
-        android:layout_alignTop="@+id/button11"
+    <ImageButton
+        android:layout_width="170dp"
+        android:layout_height="90dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/tinynote_cerrar"
+        android:layout_marginBottom="100dp"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:textSize="30dp" />
+        android:id="@+id/btn_cerrar"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -44,7 +44,7 @@
         android:id="@+id/textView7"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textSize="40dp" />
+        android:textSize="40dp"/>
 
     <ScrollView
         android:layout_width="wrap_content"
@@ -53,7 +53,7 @@
         android:layout_below="@+id/textView7"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_above="@+id/button11"
+        android:layout_above="@+id/btn_abrir"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 </RelativeLayout>

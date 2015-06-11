@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 
@@ -20,8 +21,8 @@ public class Inicio extends ActionBarActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
 
-        final Button boton = (Button) findViewById(R.id.button2);
-        boton.setOnClickListener (new View.OnClickListener()
+        final ImageButton bton_report_incid = (ImageButton) findViewById(R.id.btn_report_incid);
+        bton_report_incid.setOnClickListener (new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
