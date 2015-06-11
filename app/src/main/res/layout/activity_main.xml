@@ -6,7 +6,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".MainActivity"
-    android:background="@drawable/fondo">
+    android:background="@drawable/fondo_puerta18">
 
     <TextView
         android:layout_width="wrap_content"
@@ -53,7 +53,7 @@
         android:layout_height="100dp"
         android:src="@drawable/tinynote_ingresar"
         android:scaleType="fitCenter"
-        android:background="@android:color/transparent"
+        android:background="@null"
         android:layout_below="@+id/editContraseña"
         android:layout_centerHorizontal="true"
         android:id="@+id/button_ingresar"/>
