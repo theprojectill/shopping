@@ -23,13 +23,15 @@ public class Reportar extends ActionBarActivity
     Spinner lista2;
     String[] datos2 = {"Planta Baja", "Piso 1", "Piso 2"};
 
+    ImageButton btn_siguiente;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reportar);
 
-        final ImageButton btn_siguiente = (ImageButton) findViewById(R.id.btn_siguiente);
+        btn_siguiente = (ImageButton) findViewById(R.id.btn_siguiente);
         btn_siguiente.setOnClickListener (new View.OnClickListener()
         {
             @Override
