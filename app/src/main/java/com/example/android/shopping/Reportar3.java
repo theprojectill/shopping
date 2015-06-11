@@ -17,13 +17,15 @@ import android.widget.Toast;
 
 public class Reportar3 extends ActionBarActivity
 {
+    ImageButton btn_enviar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reportar3);
 
-        final ImageButton btn_enviar = (ImageButton) findViewById(R.id.btn_enviar);
+        btn_enviar = (ImageButton) findViewById(R.id.btn_enviar);
         btn_enviar.setOnClickListener (new View.OnClickListener()
         {
             @Override
@@ -35,8 +37,8 @@ public class Reportar3 extends ActionBarActivity
             }
         });
 
-        final ImageButton btn_volver = (ImageButton) findViewById(R.id.btn_volver);
-        btn_enviar.setOnClickListener (new View.OnClickListener()
+        ImageButton btn_volver = (ImageButton) findViewById(R.id.btn_volver);
+        btn_volver.setOnClickListener (new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
@@ -46,7 +48,7 @@ public class Reportar3 extends ActionBarActivity
             }
         });
 
-        btn_volver.setClickable(false);
+        btn_enviar.setClickable(false);
 
         EditText editText3 = (EditText) findViewById(R.id.editText3);
         editText3.addTextChangedListener(new TextWatcher()
@@ -66,7 +68,7 @@ public class Reportar3 extends ActionBarActivity
             {
                 TextView editText3 = (TextView) findViewById(R.id.editText3);
                 editText3.setText(s);
-                btn_volver.setClickable(true);
+                btn_enviar.setClickable(true);
             }
         });
     }
