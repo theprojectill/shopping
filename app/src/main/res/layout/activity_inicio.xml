@@ -42,7 +42,6 @@
         android:text="Sincronizar"
         android:id="@+id/button5"
         android:textSize="30dp"
-        android:layout_marginBottom="49dp"
-        android:layout_gravity="center"/>
+        android:layout_marginBottom="49dp" />
 
 </LinearLayout>
