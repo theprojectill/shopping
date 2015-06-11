@@ -18,15 +18,15 @@ public class Reportar2 extends ActionBarActivity
 {
     Spinner lista;
     String[] datos = {"Mal Olor", "Suelo Sucio"};
-
+    ImageButton siguintoso;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reportar2);
 
-        final ImageButton btn_siguiente = (ImageButton) findViewById(R.id.btn_siguiente);
-        btn_siguiente.setOnClickListener (new View.OnClickListener()
+        siguintoso = (ImageButton) findViewById(R.id.btn_siguiente);
+        siguintoso.setOnClickListener (new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
@@ -36,7 +36,7 @@ public class Reportar2 extends ActionBarActivity
             }
         });
 
-        final ImageButton btn_volver = (ImageButton) findViewById(R.id.btn_volver);
+        ImageButton btn_volver = (ImageButton) findViewById(R.id.btn_volver);
         btn_volver.setOnClickListener (new View.OnClickListener()
         {
             @Override
@@ -46,6 +46,29 @@ public class Reportar2 extends ActionBarActivity
                 startActivity(cambiar);
             }
         });
+
+
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_reportar2, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
 
         lista = (Spinner)findViewById(R.id.spinner);
 
@@ -83,27 +106,6 @@ public class Reportar2 extends ActionBarActivity
 
             }
         });
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_reportar2, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }

@@ -47,7 +47,8 @@
         android:scaleType="fitCenter"
         android:background="@null"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"/>
+        android:layout_alignParentRight="true"
+        android:id="@+id/btn_siguiente"/>
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
