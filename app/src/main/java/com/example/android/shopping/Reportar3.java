@@ -50,27 +50,20 @@ public class Reportar3 extends ActionBarActivity
 
         btn_enviar.setClickable(false);
 
-        EditText editText3 = (EditText) findViewById(R.id.editText3);
-        editText3.addTextChangedListener(new TextWatcher()
-        {
+        EditText editDescripcion = (EditText) findViewById(R.id.editText3);
+        editDescripcion.addTextChangedListener(new TextWatcher() {
 
-            public void afterTextChanged(Editable s)
-            {
-
+            public void afterTextChanged(Editable s) {
             }
 
-            public void beforeTextChanged(CharSequence s, int start, int count, int after)
-            {
-
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
 
-            public void onTextChanged(CharSequence s, int start, int before, int count)
-            {
-                TextView editText3 = (TextView) findViewById(R.id.editText3);
-                editText3.setText(s);
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
                 btn_enviar.setClickable(true);
             }
         });
+
     }
 
 
