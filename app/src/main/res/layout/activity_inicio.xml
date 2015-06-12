@@ -22,8 +22,8 @@
     <ImageButton
         android:layout_width="180dp"
         android:layout_height="130dp"
-        android:src="@drawable/tinynote_reportar_incidente"
-        android:id="@+id/btn_report_incid"
+        android:src="@drawable/tinynote_comenzar_planilla"
+        android:id="@+id/btn_comenzar_planilla"
         android:scaleType="fitCenter"
         android:layout_gravity="center"
         android:background="@null"
@@ -32,18 +32,11 @@
     <ImageButton
         android:layout_width="180dp"
         android:layout_height="130dp"
-        android:src="@drawable/tinynote_resolver_incidente"
-        android:id="@+id/btn_resol_incid"
+        android:src="@drawable/tinynote_editar_planilla"
+        android:id="@+id/btn_edit_planilla"
         android:scaleType="fitCenter"
         android:layout_gravity="center"
-        android:background="@null" />
+        android:background="@null"
+        android:layout_marginTop="80dp"/>
 
-    <ImageButton
-        android:layout_width="180dp"
-        android:layout_height="130dp"
-        android:src="@drawable/tinynote_revisar_incidente"
-        android:id="@+id/btn_revis_incid"
-        android:scaleType="fitCenter"
-        android:layout_gravity="center"
-        android:background="@null"/>
 </LinearLayout>
