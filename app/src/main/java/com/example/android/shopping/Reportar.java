@@ -31,6 +31,9 @@ public class Reportar extends ActionBarActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reportar);
 
+        //lista2.setClickable(false);
+        //btn_siguiente.setClickable(false);
+
         btn_siguiente = (ImageButton) findViewById(R.id.btn_siguiente);
         btn_siguiente.setOnClickListener (new View.OnClickListener()
         {
@@ -52,6 +55,8 @@ public class Reportar extends ActionBarActivity
                 startActivity(cambiar);
             }
         });
+
+
     }
 
 
@@ -98,6 +103,8 @@ public class Reportar extends ActionBarActivity
                         break;
 
                     case 1:
+                        lista2.setAlpha(1);
+                        lista2.setClickable(true);
                         Toast t = Toast.makeText(getApplicationContext(), datos[position], Toast.LENGTH_LONG);
                         t.show();
                         break;
@@ -140,6 +147,7 @@ public class Reportar extends ActionBarActivity
                         break;
 
                     case 1:
+                        btn_siguiente.setClickable(true);
                         Toast t = Toast.makeText(getApplicationContext(), datos2[position], Toast.LENGTH_LONG);
                         t.show();
                         break;

@@ -21,8 +21,8 @@ public class Inicio extends ActionBarActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
 
-        final ImageButton bton_report_incid = (ImageButton) findViewById(R.id.btn_report_incid);
-        bton_report_incid.setOnClickListener (new View.OnClickListener()
+        final ImageButton btn_comenzar_planilla = (ImageButton) findViewById(R.id.btn_comenzar_planilla);
+        btn_comenzar_planilla.setOnClickListener (new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
