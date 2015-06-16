@@ -1,6 +1,7 @@
 package com.example.android.shopping;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
@@ -21,6 +22,10 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        /*DbManager manager = new DbManager(this);
+        manager.insertar("Adam", "Adam");
+        manager.insertar2("Dante", "Dante");*/
 
         user = (EditText)findViewById(R.id.editUsusario);       //obtengo la referencia del EditText
         pass = (EditText)findViewById(R.id.editContraseña);
@@ -58,7 +63,7 @@ public class MainActivity extends ActionBarActivity {
                 }
                 else
                 {
-                    Toast.makeText(getApplicationContext(), "Datos Incorrectos", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Usuario Incorrecto", Toast.LENGTH_SHORT).show();
                 }
             }
         });
