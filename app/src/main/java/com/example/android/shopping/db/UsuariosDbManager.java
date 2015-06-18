@@ -2,6 +2,7 @@ package com.example.android.shopping.db;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 /**
@@ -63,12 +64,20 @@ public class UsuariosDbManager
     public void eliminarMultiple(String us1, String us2)
     {
         db.delete(TABLE_NAME, CN_USUARIO + "IN (?,?)", new String[]{us1, us2});
-    }
-*/
+    }*/
+
     public void modificarContraseña(String usuario, String nuevaContraseña)
     {
         //db.update(TABLA, ContentValues, Claúsula Where, Argumentos Where)
 
         db.update(TABLE_NAME, this.generarContentValues(usuario, nuevaContraseña), CN_USUARIO + "=?", new String[]{usuario});
+    }
+
+    public boolean existeUsuario(String usuario, String contraseña) {
+        Cursor cursor = this.db.rawQuery("select 1 from " + TABLE_NAME + " where " + CN_USUARIO + "=? AND " + CN_CONTRASEÑA + " =?",
+                new String[] { usuario, contraseña });
+        boolean exists = (cursor.getCount() > 0);
+        cursor.close();
+        return exists;
     }
 }

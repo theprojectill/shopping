@@ -14,7 +14,8 @@ public class DbHelper extends SQLiteOpenHelper
     private static final String DB_NAME = "shopping.sqlite";
     private static final int DB_SCHEME_VERSION = 1;
 
-    public DbHelper(Context context) {
+    public DbHelper(Context context)
+    {
         super(context, DB_NAME, null, DB_SCHEME_VERSION);
     }
 
