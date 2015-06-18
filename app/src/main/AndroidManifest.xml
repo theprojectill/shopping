@@ -41,7 +41,7 @@
             android:label="@string/title_activity_revisar2" >
         </activity>
         <activity
-            android:name=".Reportar2"
+            android:name=".Shopping"
             android:label="@string/title_activity_reportar2" >
         </activity>
         <activity

@@ -8,22 +8,24 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
 
-public class Reportar2 extends ActionBarActivity
+
+public class Shopping extends ActionBarActivity
 {
     Spinner lista;
-    String[] datos = {"Mal Olor", "Suelo Sucio"};
     ImageButton siguintoso;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reportar2);
+        setContentView(R.layout.activity_shopping);
 
         siguintoso = (ImageButton) findViewById(R.id.btn_siguiente);
         siguintoso.setOnClickListener (new View.OnClickListener()
@@ -31,7 +33,7 @@ public class Reportar2 extends ActionBarActivity
             @Override
             public void onClick(View view)
             {
-                Intent cambiar = new Intent(Reportar2.this, Reportar3.class);
+                Intent cambiar = new Intent(Shopping.this, Inicio.class);
                 startActivity(cambiar);
             }
         });
@@ -42,7 +44,7 @@ public class Reportar2 extends ActionBarActivity
             @Override
             public void onClick(View view)
             {
-                Intent cambiar = new Intent(Reportar2.this, Reportar.class);
+                Intent cambiar = new Intent(Shopping.this, MainActivity.class);
                 startActivity(cambiar);
             }
         });
@@ -72,6 +74,10 @@ public class Reportar2 extends ActionBarActivity
 
         lista = (Spinner)findViewById(R.id.spinner);
 
+        final List<String> datos = new ArrayList<String>();
+        datos.add("Abasto");
+        datos.add("Alto Palermo");
+
         ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datos);
         lista.setAdapter(adaptador);
 
@@ -84,17 +90,17 @@ public class Reportar2 extends ActionBarActivity
                 switch (position)
                 {
                     case 0:
-                        Toast to = Toast.makeText(getApplicationContext(), datos[position], Toast.LENGTH_LONG);
+                        Toast to = Toast.makeText(getApplicationContext(), datos.get(position), Toast.LENGTH_LONG);
                         to.show();
                         break;
 
                     case 1:
-                        Toast t = Toast.makeText(getApplicationContext(), datos[position], Toast.LENGTH_LONG);
+                        Toast t = Toast.makeText(getApplicationContext(), datos.get(position), Toast.LENGTH_LONG);
                         t.show();
                         break;
 
                     case 2:
-                        Toast po = Toast.makeText(getApplicationContext(), datos[position], Toast.LENGTH_LONG);
+                        Toast po = Toast.makeText(getApplicationContext(), datos.get(position), Toast.LENGTH_LONG);
                         po.show();
                         break;
                 }

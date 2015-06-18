@@ -3,7 +3,6 @@ package com.example.android.shopping;
 import android.content.Intent;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 
@@ -40,7 +39,7 @@ public class Reportar extends ActionBarActivity
             @Override
             public void onClick(View view)
             {
-                Intent cambiar = new Intent(Reportar.this, Reportar2.class);
+                Intent cambiar = new Intent(Reportar.this, Reportar3.class);
                 startActivity(cambiar);
             }
         });

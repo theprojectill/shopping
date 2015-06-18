@@ -52,7 +52,7 @@ public class MainActivity extends ActionBarActivity {
 
                 if (manager.existeUsuario(usuario, contraseña))
                 {
-                    Intent nuevoformulario = new Intent(MainActivity.this, Inicio.class);
+                    Intent nuevoformulario = new Intent(MainActivity.this, Shopping.class);
                     startActivity(nuevoformulario);
 
                     if (recordameckBox.isChecked()) {

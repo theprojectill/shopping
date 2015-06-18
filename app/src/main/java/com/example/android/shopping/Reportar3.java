@@ -7,11 +7,9 @@ import android.text.Editable;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.text.TextWatcher;
 import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -43,7 +41,7 @@ public class Reportar3 extends ActionBarActivity
             @Override
             public void onClick(View view)
             {
-                Intent cambiar = new Intent(Reportar3.this, Reportar2.class);
+                Intent cambiar = new Intent(Reportar3.this, Reportar.class);
                 startActivity(cambiar);
             }
         });
