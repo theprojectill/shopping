@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.example.android.shopping.db.UsuariosDbManager;
+
 
 public class MainActivity extends ActionBarActivity {
 
@@ -17,9 +19,9 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*DbManager manager = new DbManager(this);
+        UsuariosDbManager manager = new UsuariosDbManager(this);
         manager.insertar("Adam", "Adam");
-        manager.insertar2("Dante", "Dante");*/
+
 
         ImageButton boton = (ImageButton) findViewById(R.id.button_ingresar);
 

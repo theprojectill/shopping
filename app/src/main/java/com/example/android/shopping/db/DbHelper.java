@@ -1,15 +1,17 @@
-package com.example.android.shopping;
+package com.example.android.shopping.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.android.shopping.db.UsuariosDbManager;
+
 /**
  * Created by android on 16/06/2015.
  */
-/*public class DbHelper extends SQLiteOpenHelper
+public class DbHelper extends SQLiteOpenHelper
 {
-    private static final String DB_NAME = "contactos.sqlite";
+    private static final String DB_NAME = "shopping.sqlite";
     private static final int DB_SCHEME_VERSION = 1;
 
     public DbHelper(Context context) {
@@ -19,11 +21,11 @@ import android.database.sqlite.SQLiteOpenHelper;
     @Override
     public void onCreate(SQLiteDatabase db)
     {
-        db.execSQL(DbManager.CREATE_TABLE);
+        db.execSQL(UsuariosDbManager.CREATE_TABLE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
     }
-}*/
+}

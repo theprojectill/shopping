@@ -1,4 +1,4 @@
-package com.example.android.shopping;
+package com.example.android.shopping.db;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -7,9 +7,9 @@ import android.database.sqlite.SQLiteDatabase;
 /**
  * Created by android on 16/06/2015.
  */
-/*public class DbManager
+public class UsuariosDbManager
 {
-    public static final String TABLE_NAME = "DB";
+    public static final String TABLE_NAME = "usuarios";
     public static final String CN_ID = "_id";
     public static final String CN_USUARIO = "usuario";
     public static final String CN_CONTRASEÑA = "contraseña";
@@ -19,7 +19,7 @@ import android.database.sqlite.SQLiteDatabase;
 //nombre text not null,
 //telefono text);
 
-    public static final String CREATE_TABLE = "create table" +TABLE_NAME+ " ("
+    public static final String CREATE_TABLE = "create table " +TABLE_NAME+ " ("
             + CN_ID + " integer primary key autoincrement,"
             + CN_USUARIO + " text not null,"
             + CN_CONTRASEÑA + " text);";
@@ -27,13 +27,13 @@ import android.database.sqlite.SQLiteDatabase;
     private DbHelper helper;
     private SQLiteDatabase db;
 
-    public DbManager(Context context)
+    public UsuariosDbManager(Context context)
     {
-        helper = new DbHelper(context);
-        db = helper.getWritableDatabase();
+        this.helper = new DbHelper(context);
+        this.db = helper.getWritableDatabase();
     }
 
-    public ContentValues generarContentValues(String usuario, String contraseña)
+    private ContentValues generarContentValues(String usuario, String contraseña)
     {
         ContentValues valores = new ContentValues();
         valores.put(CN_USUARIO, usuario);
@@ -46,14 +46,7 @@ import android.database.sqlite.SQLiteDatabase;
     {
         //db.insert(TABLA, NullColumnHack, ContentValues);
 
-        db.insert(TABLE_NAME, null, generarContentValues(usuario, contraseña));
-    }
-
-    public void insertar2(String usuario, String contraseña)
-    {
-        //INSERT INTO contactos VALUES(null, 'paco', 9999)
-
-        db.execSQL("insert into " + TABLE_NAME + " values(null,'" + usuario + "'," + contraseña + ")");
+        db.insert(TABLE_NAME, null, this.generarContentValues(usuario, contraseña));
     }
 
     /*db.insert();
@@ -71,11 +64,11 @@ import android.database.sqlite.SQLiteDatabase;
     {
         db.delete(TABLE_NAME, CN_USUARIO + "IN (?,?)", new String[]{us1, us2});
     }
-
+*/
     public void modificarContraseña(String usuario, String nuevaContraseña)
     {
         //db.update(TABLA, ContentValues, Claúsula Where, Argumentos Where)
 
-        db.update(TABLE_NAME, generarContentValues(usuario, nuevaContraseña), CN_USUARIO + "=?", new String[]{usuario});
+        db.update(TABLE_NAME, this.generarContentValues(usuario, nuevaContraseña), CN_USUARIO + "=?", new String[]{usuario});
     }
-}*/
+}
