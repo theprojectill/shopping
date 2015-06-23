@@ -56,18 +56,9 @@
         android:layout_height="100dp"
         android:src="@drawable/tinynote_ingresar"
         android:scaleType="fitCenter"
-        android:background="@null"
+        android:background="?attr/selectableItemBackground"
         android:layout_below="@+id/editContraseña"
         android:layout_centerHorizontal="true"
         android:id="@+id/button_ingresar"/>
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Recordar credenciales"
-        android:id="@+id/recordame_ckBox"
-        android:layout_below="@+id/button_ingresar"
-        android:layout_centerHorizontal="true"
-        android:checked="false" />
 
 </RelativeLayout>

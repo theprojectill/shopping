@@ -20,7 +20,7 @@
         android:layout_width="170dp"
         android:layout_height="90dp"
         android:layout_alignParentBottom="true"
-        android:background="@null"
+        android:background="?attr/selectableItemBackground"
         android:src="@drawable/tinynote_volver"
         android:scaleType="fitCenter"
         android:id="@+id/btn_volver"/>
@@ -30,7 +30,7 @@
         android:layout_height="90dp"
         android:src="@drawable/tinynote_siguiente"
         android:scaleType="fitCenter"
-        android:background="@null"
+        android:background="?attr/selectableItemBackground"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:id="@+id/btn_siguiente"/>

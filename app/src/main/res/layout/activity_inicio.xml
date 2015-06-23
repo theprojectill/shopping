@@ -17,7 +17,7 @@
         android:src="@drawable/sincronizar"
         android:id="@+id/btn_sincronizar"
         android:scaleType="fitCenter"
-        android:background="@null"/>
+        android:background="?attr/selectableItemBackground"/>
 
     <ImageButton
         android:layout_width="180dp"
@@ -26,8 +26,9 @@
         android:id="@+id/btn_comenzar_planilla"
         android:scaleType="fitCenter"
         android:layout_gravity="center"
-        android:background="@null"
-        android:layout_marginTop="50dp"/>
+        android:background="?attr/selectableItemBackground"
+        android:layout_marginTop="50dp"
+        android:clickable="false" />
 
     <ImageButton
         android:layout_width="180dp"
@@ -36,7 +37,7 @@
         android:id="@+id/btn_edit_planilla"
         android:scaleType="fitCenter"
         android:layout_gravity="center"
-        android:background="@null"
+        android:background="?attr/selectableItemBackground"
         android:layout_marginTop="80dp"/>
 
 </LinearLayout>
