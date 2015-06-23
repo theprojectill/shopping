@@ -75,26 +75,34 @@ public class Reportar extends ActionBarActivity
                 {
                     case 0:
                         lista2.setAlpha(0);
+                        lista2.setClickable(false);
                         lista4.setAlpha(0);
+                        lista4.setClickable(false);
                         break;
 
                     case 1:
                         lista2.setAlpha(1);
+                        lista2.setClickable(true);
                         lista4.setAlpha(0);
+                        lista4.setClickable(false);
                         Toast t = Toast.makeText(getApplicationContext(), datos[position], Toast.LENGTH_LONG);
                         t.show();
                         break;
 
                     case 2:
                         lista2.setAlpha(0);
+                        lista2.setClickable(false);
                         lista4.setAlpha(1);
+                        lista4.setClickable(true);
                         Toast po = Toast.makeText(getApplicationContext(), datos[position], Toast.LENGTH_LONG);
                         po.show();
                         break;
 
                     case 3:
                         lista2.setAlpha(0);
+                        lista2.setClickable(false);
                         lista4.setAlpha(0);
+                        lista4.setClickable(false);
                         Toast p = Toast.makeText(getApplicationContext(), datos[position], Toast.LENGTH_LONG);
                         p.show();
                         break;
@@ -109,6 +117,7 @@ public class Reportar extends ActionBarActivity
         });
 
         lista2 = (Spinner)findViewById(R.id.spinner2);
+        lista2.setClickable(false);
 
         ArrayAdapter<String> adaptador2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datos2);
         lista2.setAdapter(adaptador2);
@@ -153,6 +162,7 @@ public class Reportar extends ActionBarActivity
         });
 
         lista4 = (Spinner)findViewById(R.id.spinner4);
+        lista4.setClickable(false);
 
         ArrayAdapter<String> adaptador4 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datos4);
         lista4.setAdapter(adaptador4);
