@@ -36,7 +36,9 @@ public class Reportar extends ActionBarActivity
         //lista2.setClickable(false);
         //btn_siguiente.setClickable(false);
 
+
         btn_siguiente = (ImageButton) findViewById(R.id.btn_siguiente);
+        btn_siguiente.setClickable(false);
         btn_siguiente.setOnClickListener (new View.OnClickListener()
         {
             @Override
