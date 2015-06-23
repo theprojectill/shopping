@@ -17,10 +17,13 @@ import android.widget.Toast;
 public class Reportar extends ActionBarActivity
 {
     Spinner lista;
-    String[] datos = {"Baños", "PaCo", "Mall"};
+    String[] datos = {"Elija un coso...", "Baños", "PaCo", "Mall"};
 
     Spinner lista2;
-    String[] datos2 = {"Planta Baja", "Piso 1", "Piso 2"};
+    String[] datos2 = {"Elija la ubicación...", "Planta Baja", "Piso 1", "Piso 2"};
+
+    Spinner lista4;
+    String[] datos4 = {"holis", "todo bien?", "ah re loco"};
 
     ImageButton btn_siguiente;
 
@@ -55,34 +58,6 @@ public class Reportar extends ActionBarActivity
             }
         });
 
-
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_reportar, menu);
-        return true;
-
-
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings)
-        {
-            return true;
-        }
-
         lista = (Spinner)findViewById(R.id.spinner);
 
         ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datos);
@@ -97,23 +72,27 @@ public class Reportar extends ActionBarActivity
                 switch (position)
                 {
                     case 0:
-                        Toast to = Toast.makeText(getApplicationContext(), datos[position], Toast.LENGTH_LONG);
-                        to.show();
+                        lista2.setAlpha(0);
+                        lista4.setAlpha(0);
                         break;
 
                     case 1:
                         lista2.setAlpha(1);
-                        lista2.setClickable(true);
+                        lista4.setAlpha(0);
                         Toast t = Toast.makeText(getApplicationContext(), datos[position], Toast.LENGTH_LONG);
                         t.show();
                         break;
 
                     case 2:
+                        lista2.setAlpha(0);
+                        lista4.setAlpha(1);
                         Toast po = Toast.makeText(getApplicationContext(), datos[position], Toast.LENGTH_LONG);
                         po.show();
                         break;
 
                     case 3:
+                        lista2.setAlpha(0);
+                        lista4.setAlpha(0);
                         Toast p = Toast.makeText(getApplicationContext(), datos[position], Toast.LENGTH_LONG);
                         p.show();
                         break;
@@ -141,8 +120,7 @@ public class Reportar extends ActionBarActivity
                 switch (position)
                 {
                     case 0:
-                        Toast to = Toast.makeText(getApplicationContext(), datos2[position], Toast.LENGTH_LONG);
-                        to.show();
+                        btn_siguiente.setClickable(true);
                         break;
 
                     case 1:
@@ -152,11 +130,13 @@ public class Reportar extends ActionBarActivity
                         break;
 
                     case 2:
+                        btn_siguiente.setClickable(true);
                         Toast po = Toast.makeText(getApplicationContext(), datos2[position], Toast.LENGTH_LONG);
                         po.show();
                         break;
 
                     case 3:
+                        btn_siguiente.setClickable(true);
                         Toast p = Toast.makeText(getApplicationContext(), datos2[position], Toast.LENGTH_LONG);
                         p.show();
                         break;
@@ -169,6 +149,72 @@ public class Reportar extends ActionBarActivity
 
             }
         });
+
+        lista4 = (Spinner)findViewById(R.id.spinner4);
+
+        ArrayAdapter<String> adaptador4 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datos4);
+        lista4.setAdapter(adaptador4);
+
+        lista4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+                switch (position)
+                {
+                    case 0:
+                        btn_siguiente.setClickable(true);
+                        break;
+
+                    case 1:
+                        btn_siguiente.setClickable(true);
+                        Toast t = Toast.makeText(getApplicationContext(), datos4[position], Toast.LENGTH_LONG);
+                        t.show();
+                        break;
+
+                    case 2:
+                        btn_siguiente.setClickable(true);
+                        Toast po = Toast.makeText(getApplicationContext(), datos4[position], Toast.LENGTH_LONG);
+                        po.show();
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent)
+            {
+
+            }
+        });
+
+
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_reportar, menu);
+        return true;
+
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings)
+        {
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
