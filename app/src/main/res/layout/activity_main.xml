@@ -36,7 +36,8 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/editUsusario"
         android:singleLine="true"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:text="Adam" />
 
     <EditText
         android:layout_width="250dp"
@@ -47,7 +48,8 @@
         android:maxLength="20"
         android:singleLine="true"
         android:inputType="textPassword"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:text="Adam" />
 
     <ImageButton
         android:layout_width="120dp"

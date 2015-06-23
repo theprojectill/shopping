@@ -19,6 +19,7 @@ import java.util.List;
 public class Shopping extends ActionBarActivity
 {
     Spinner lista;
+    List<String> datosLista = new ArrayList<String>();
     ImageButton siguintoso;
 
     @Override
@@ -49,6 +50,47 @@ public class Shopping extends ActionBarActivity
             }
         });
 
+        lista = (Spinner)findViewById(R.id.spinner3);
+
+        //final List<String> datos = new ArrayList<String>();
+        //datosLista = new ArrayList<String>();
+        datosLista.add("Elija opción...");
+        datosLista.add("Abasto");
+        datosLista.add("Alto Palermo");
+
+        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datosLista);
+        lista.setAdapter(adaptador);
+
+        lista.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+                switch (position)
+                {
+                    case 0:
+                        break;
+
+                    case 1:
+                        Toast t = Toast.makeText(getApplicationContext(), datosLista.get(position), Toast.LENGTH_LONG);
+                        t.show();
+                        break;
+
+                    case 2:
+                        Toast po = Toast.makeText(getApplicationContext(), datosLista.get(position), Toast.LENGTH_LONG);
+                        po.show();
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent)
+            {
+
+            }
+        });
+
 
     }
 
@@ -72,46 +114,7 @@ public class Shopping extends ActionBarActivity
             return true;
         }
 
-        lista = (Spinner)findViewById(R.id.spinner);
 
-        final List<String> datos = new ArrayList<String>();
-        datos.add("Abasto");
-        datos.add("Alto Palermo");
-
-        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datos);
-        lista.setAdapter(adaptador);
-
-        lista.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
-        {
-
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
-            {
-                switch (position)
-                {
-                    case 0:
-                        Toast to = Toast.makeText(getApplicationContext(), datos.get(position), Toast.LENGTH_LONG);
-                        to.show();
-                        break;
-
-                    case 1:
-                        Toast t = Toast.makeText(getApplicationContext(), datos.get(position), Toast.LENGTH_LONG);
-                        t.show();
-                        break;
-
-                    case 2:
-                        Toast po = Toast.makeText(getApplicationContext(), datos.get(position), Toast.LENGTH_LONG);
-                        po.show();
-                        break;
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent)
-            {
-
-            }
-        });
 
         return super.onOptionsItemSelected(item);
     }
