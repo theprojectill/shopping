@@ -17,13 +17,13 @@ import android.widget.Toast;
 public class Reportar extends ActionBarActivity
 {
     Spinner lista;
-    String[] datos = {"Elija un coso...", "Baños", "PaCo", "Mall"};
+    String[] datos = {"Elija un sector...", "Mall", "Estacionamiento", "Baños", "Ascensor", "Escalera Mecánica", "Escalera Fija", "Rampa", "Cajero", "Telefonos", "Lockers", "Maquinas Expendedoras", "Vereda", "Luces", "Puertas", "Publicidad", "Paco", "Pasillo", "Lcd's"};
 
     Spinner lista2;
-    String[] datos2 = {"Elija la ubicación...", "Planta Baja", "Piso 1", "Piso 2"};
+    String[] datos2 = {"Elija la ubicación...", "Corrientes", "Anchorena", "Agüero", "1° Anchorena", "1° Agüero"};
 
     Spinner lista4;
-    String[] datos4 = {"holis", "todo bien?", "ah re loco"};
+    String[] datos4 = {"Elija la ubicación...", "0° Anchorena", "-1° Anchorena", "-2° Anchorena", "0° Agüero", "-1° Agüero", "-2° Agüero"};
 
     ImageButton btn_siguiente;
 
