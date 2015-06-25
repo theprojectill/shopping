@@ -7,9 +7,15 @@ import android.text.Editable;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.text.TextWatcher;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -45,6 +51,37 @@ public class Reportar3 extends ActionBarActivity
                 startActivity(cambiar);
             }
         });
+
+        LinearLayout tomaContainer = new LinearLayout(this);
+
+        TextView label = new TextView(this);
+        label.setText("Limpieza");
+        RadioGroup group = new RadioGroup(this);
+
+        RadioButton radioIncompleto = new RadioButton(this);
+        radioIncompleto.setText("Incompleto");
+
+        RadioButton radioBien = new RadioButton(this);
+        radioBien.setText("Bien");
+
+        RadioButton radioRegular= new RadioButton(this);
+        radioRegular.setText("Regular");
+
+        RadioButton radioMal = new RadioButton(this);
+        radioMal.setText("Mal");
+
+        group.addView(radioIncompleto);
+        group.addView(radioBien);
+        group.addView(radioRegular);
+        group.addView(radioMal);
+
+        Button foto = new Button(this);
+
+        tomaContainer.addView(label);
+        tomaContainer.addView(group);
+        tomaContainer.addView(foto);
+
+        ((ViewGroup)this.findViewById(R.id.container)).addView(tomaContainer);
 
     }
 

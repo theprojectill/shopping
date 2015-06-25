@@ -13,19 +13,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.android.shopping.db.SectoresDb;
+import com.example.android.shopping.db.UbicacionesDb;
+
+import java.util.List;
+
 
 public class Reportar extends ActionBarActivity
 {
-    Spinner lista;
-    String[] datos = {"Elija un sector...", "Mall", "Estacionamiento", "Baños", "Ascensor", "Escalera Mecánica", "Escalera Fija", "Rampa", "Cajero", "Telefonos", "Lockers", "Maquinas Expendedoras", "Vereda", "Luces", "Puertas", "Publicidad", "Paco", "Pasillo", "Lcd's"};
-
-    Spinner lista2;
-    String[] datos2 = {"Elija la ubicación...", "Corrientes", "Anchorena", "Agüero", "1° Anchorena", "1° Agüero"};
-
-    Spinner lista4;
-    String[] datos4 = {"Elija la ubicación...", "0° Anchorena", "-1° Anchorena", "-2° Anchorena", "0° Agüero", "-1° Agüero", "-2° Agüero"};
-
-    ImageButton btn_siguiente;
+    private Spinner spinnerSectores;
+    private Spinner spinnerUbicaciones;
+    private ImageButton btn_siguiente;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -33,9 +31,10 @@ public class Reportar extends ActionBarActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reportar);
 
-        //lista2.setClickable(false);
-        //btn_siguiente.setClickable(false);
+        spinnerSectores = (Spinner)findViewById(R.id.spinner_sectores);
+        spinnerUbicaciones = (Spinner)findViewById(R.id.spinner_ubicaciones);
 
+        spinnerUbicaciones.setClickable(false);
 
         btn_siguiente = (ImageButton) findViewById(R.id.btn_siguiente);
         btn_siguiente.setClickable(false);
@@ -45,6 +44,8 @@ public class Reportar extends ActionBarActivity
             public void onClick(View view)
             {
                 Intent cambiar = new Intent(Reportar.this, Reportar3.class);
+                cambiar.putExtra("SECTOR", spinnerSectores.getSelectedItem().toString());
+                cambiar.putExtra("UBIICACION", spinnerUbicaciones.getSelectedItem().toString());
                 startActivity(cambiar);
             }
         });
@@ -60,146 +61,42 @@ public class Reportar extends ActionBarActivity
             }
         });
 
-        lista = (Spinner)findViewById(R.id.spinner);
+        List<String> sectores = new SectoresDb().getSectores();
+        sectores.add(0, "Elija un sector...");
+        //TODO: Agregar la opcion "Elija un sector..."
+        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, sectores);
+        spinnerSectores.setAdapter(adaptador);
 
-        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datos);
-        lista.setAdapter(adaptador);
-
-        lista.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
-        {
+        spinnerSectores.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
-            {
-                switch (position)
-                {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
                     case 0:
-                        lista2.setAlpha(0);
-                        lista2.setClickable(false);
-                        lista4.setAlpha(0);
-                        lista4.setClickable(false);
+                        spinnerUbicaciones.setAlpha(0);
+                        spinnerUbicaciones.setClickable(false);
                         break;
 
-                    case 1:
-                        lista2.setAlpha(1);
-                        lista2.setClickable(true);
-                        lista4.setAlpha(0);
-                        lista4.setClickable(false);
-                        Toast t = Toast.makeText(getApplicationContext(), datos[position], Toast.LENGTH_LONG);
+                    default:
+                        String textSector = parent.getItemAtPosition(position).toString();
+                        List<String> ubicaciones = new UbicacionesDb().getUbicaciones(textSector);
+                        ubicaciones.add(0, "Elija una ubicación...");
+                        ArrayAdapter<String> ubicacionesAdapter =
+                                new ArrayAdapter<String>(Reportar.this, android.R.layout.simple_spinner_item, ubicaciones);
+                        spinnerUbicaciones.setAdapter(ubicacionesAdapter);
+                        spinnerUbicaciones.setAlpha(1);
+                        spinnerUbicaciones.setClickable(true);
+                        Toast t = Toast.makeText(getApplicationContext(), textSector, Toast.LENGTH_LONG);
                         t.show();
-                        break;
-
-                    case 2:
-                        lista2.setAlpha(0);
-                        lista2.setClickable(false);
-                        lista4.setAlpha(1);
-                        lista4.setClickable(true);
-                        Toast po = Toast.makeText(getApplicationContext(), datos[position], Toast.LENGTH_LONG);
-                        po.show();
-                        break;
-
-                    case 3:
-                        lista2.setAlpha(0);
-                        lista2.setClickable(false);
-                        lista4.setAlpha(0);
-                        lista4.setClickable(false);
-                        Toast p = Toast.makeText(getApplicationContext(), datos[position], Toast.LENGTH_LONG);
-                        p.show();
                         break;
                 }
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> parent)
-            {
+            public void onNothingSelected(AdapterView<?> parent) {
 
             }
         });
-
-        lista2 = (Spinner)findViewById(R.id.spinner2);
-        lista2.setClickable(false);
-
-        ArrayAdapter<String> adaptador2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datos2);
-        lista2.setAdapter(adaptador2);
-
-        lista2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
-        {
-
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
-            {
-                switch (position)
-                {
-                    case 0:
-                        btn_siguiente.setClickable(true);
-                        break;
-
-                    case 1:
-                        btn_siguiente.setClickable(true);
-                        Toast t = Toast.makeText(getApplicationContext(), datos2[position], Toast.LENGTH_LONG);
-                        t.show();
-                        break;
-
-                    case 2:
-                        btn_siguiente.setClickable(true);
-                        Toast po = Toast.makeText(getApplicationContext(), datos2[position], Toast.LENGTH_LONG);
-                        po.show();
-                        break;
-
-                    case 3:
-                        btn_siguiente.setClickable(true);
-                        Toast p = Toast.makeText(getApplicationContext(), datos2[position], Toast.LENGTH_LONG);
-                        p.show();
-                        break;
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent)
-            {
-
-            }
-        });
-
-        lista4 = (Spinner)findViewById(R.id.spinner4);
-        lista4.setClickable(false);
-
-        ArrayAdapter<String> adaptador4 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datos4);
-        lista4.setAdapter(adaptador4);
-
-        lista4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
-        {
-
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
-            {
-                switch (position)
-                {
-                    case 0:
-                        btn_siguiente.setClickable(true);
-                        break;
-
-                    case 1:
-                        btn_siguiente.setClickable(true);
-                        Toast t = Toast.makeText(getApplicationContext(), datos4[position], Toast.LENGTH_LONG);
-                        t.show();
-                        break;
-
-                    case 2:
-                        btn_siguiente.setClickable(true);
-                        Toast po = Toast.makeText(getApplicationContext(), datos4[position], Toast.LENGTH_LONG);
-                        po.show();
-                        break;
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent)
-            {
-
-            }
-        });
-
 
     }
 

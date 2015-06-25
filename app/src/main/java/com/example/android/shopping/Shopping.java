@@ -52,8 +52,6 @@ public class Shopping extends ActionBarActivity
 
         lista = (Spinner)findViewById(R.id.spinner3);
 
-        //final List<String> datos = new ArrayList<String>();
-        //datosLista = new ArrayList<String>();
         datosLista.add("Elija opción...");
         datosLista.add("Abasto");
         datosLista.add("Alto Palermo");
