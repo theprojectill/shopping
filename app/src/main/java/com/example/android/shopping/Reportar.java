@@ -43,9 +43,10 @@ public class Reportar extends ActionBarActivity
             @Override
             public void onClick(View view)
             {
+                //TODO: Agregar validaciones para que no avance si no eligieron nada
                 Intent cambiar = new Intent(Reportar.this, Reportar3.class);
                 cambiar.putExtra("SECTOR", spinnerSectores.getSelectedItem().toString());
-                cambiar.putExtra("UBIICACION", spinnerUbicaciones.getSelectedItem().toString());
+                cambiar.putExtra("UBICACION", spinnerUbicaciones.getSelectedItem().toString());
                 startActivity(cambiar);
             }
         });

@@ -1,23 +1,21 @@
 package com.example.android.shopping;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.text.Editable;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
-import android.text.TextWatcher;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import com.example.android.shopping.db.AspectosDb;
+import java.util.List;
 
 public class Reportar3 extends ActionBarActivity
 {
@@ -28,6 +26,14 @@ public class Reportar3 extends ActionBarActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reportar3);
+
+        TextView textSector = (TextView) this.findViewById(R.id.text_sector);
+        Intent intent = this.getIntent();
+        String sector = intent.getStringExtra("SECTOR");
+        String ubicacion = intent.getStringExtra("UBICACION");
+        textSector.setText(sector + " - " + ubicacion);
+
+        List<String> aspectos = new AspectosDb().getAspectos(sector, ubicacion);
 
         btn_enviar = (ImageButton) findViewById(R.id.btn_enviar);
         btn_enviar.setOnClickListener (new View.OnClickListener()
@@ -52,36 +58,44 @@ public class Reportar3 extends ActionBarActivity
             }
         });
 
-        LinearLayout tomaContainer = new LinearLayout(this);
+        ViewGroup container = (ViewGroup) this.findViewById(R.id.container);
 
-        TextView label = new TextView(this);
-        label.setText("Limpieza");
-        RadioGroup group = new RadioGroup(this);
+        for (String asp : aspectos) {
 
-        RadioButton radioIncompleto = new RadioButton(this);
-        radioIncompleto.setText("Incompleto");
+            LinearLayout tomaContainer = new LinearLayout(this);
 
-        RadioButton radioBien = new RadioButton(this);
-        radioBien.setText("Bien");
+            TextView label = new TextView(this);
+            label.setText(asp);
+            RadioGroup group = new RadioGroup(this);
+            group.setOrientation(LinearLayout.HORIZONTAL);
 
-        RadioButton radioRegular= new RadioButton(this);
-        radioRegular.setText("Regular");
+            RadioButton radioIncompleto = new RadioButton(this);
+            radioIncompleto.setText("Incompleto");
+            radioIncompleto.setSelected(true);
 
-        RadioButton radioMal = new RadioButton(this);
-        radioMal.setText("Mal");
+            RadioButton radioBien = new RadioButton(this);
+            radioBien.setText("Bien");
 
-        group.addView(radioIncompleto);
-        group.addView(radioBien);
-        group.addView(radioRegular);
-        group.addView(radioMal);
+            RadioButton radioRegular = new RadioButton(this);
+            radioRegular.setText("Regular");
 
-        Button foto = new Button(this);
+            RadioButton radioMal = new RadioButton(this);
+            radioMal.setText("Mal");
 
-        tomaContainer.addView(label);
-        tomaContainer.addView(group);
-        tomaContainer.addView(foto);
+            group.addView(radioIncompleto);
+            group.addView(radioBien);
+            group.addView(radioRegular);
+            group.addView(radioMal);
 
-        ((ViewGroup)this.findViewById(R.id.container)).addView(tomaContainer);
+            Button fotoVideo = new Button(this);
+            fotoVideo.setText("Foto/Video");
+
+            tomaContainer.addView(label);
+            tomaContainer.addView(group);
+            tomaContainer.addView(fotoVideo);
+
+            container.addView(tomaContainer);
+        }
 
     }
 
