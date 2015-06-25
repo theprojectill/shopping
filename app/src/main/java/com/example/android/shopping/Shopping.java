@@ -54,7 +54,7 @@ public class Shopping extends ActionBarActivity
 
         datosLista.add("Elija opción...");
         datosLista.add("Abasto");
-        datosLista.add("Alto Palermo");
+        //datosLista.add("Alto Palermo");
 
         ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datosLista);
         lista.setAdapter(adaptador);
