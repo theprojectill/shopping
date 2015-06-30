@@ -15,11 +15,22 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.android.shopping.db.AspectosDb;
+import com.example.android.shopping.db.ReportesDb;
+
+import java.util.HashMap;
 import java.util.List;
 
 public class Reportar2 extends ActionBarActivity
 {
+    private static final String INCOMPLETO = "Incompleto";
+    private static final String BIEN = "Bien";
+    private static final String REGULAR = "Regular";
+    private static final String MAL = "Mal";
+
     ImageButton btn_enviar;
+    HashMap<String, Integer> estadosDeLocaciones;
+    HashMap<String, RadioButton> mapaRadioButtons;
+    HashMap<String, RadioGroup> mapaRadioGroups;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -41,6 +52,21 @@ public class Reportar2 extends ActionBarActivity
             @Override
             public void onClick(View view)
             {
+                //TODO Recorrer los radio buttons seleccionados y guardar los valores en estados de locaciones
+
+                for (String aspecto : mapaRadioGroups.keySet()) {
+                    RadioGroup group = mapaRadioGroups.get(aspecto);
+                    int idSeleccionado = group.getCheckedRadioButtonId();
+
+                    if (idSeleccionado > 0) {
+                        estadosDeLocaciones.put(aspecto, idSeleccionado);
+                    }
+                }
+
+                ReportesDb reportesDb = new ReportesDb(getApplicationContext());
+
+                //reportesDb.guardarReporte(idUsuario, idEdificio, idSector, idUbicacion, estadosDeLocaciones);
+
                 Toast.makeText(getApplicationContext(), "Incidente Enviado", Toast.LENGTH_SHORT).show();
                 Intent cambiar = new Intent(Reportar2.this, Inicio.class);
                 startActivity(cambiar);
@@ -54,9 +80,7 @@ public class Reportar2 extends ActionBarActivity
             public void onClick(View view)
             {
 
-                //Todo Guardar reporte y mostrar mensaje de configuracion
-
-
+                //Todo Mensaje de alerta de que no se guardaran los cambios
 
                 Intent cambiar = new Intent(Reportar2.this, Reportar.class);
                 startActivity(cambiar);
@@ -76,22 +100,28 @@ public class Reportar2 extends ActionBarActivity
             group.setOrientation(LinearLayout.HORIZONTAL);
 
             RadioButton radioIncompleto = new RadioButton(this);
-            radioIncompleto.setText("Incompleto");
+            radioIncompleto.setText(INCOMPLETO);
             radioIncompleto.setSelected(true);
+            mapaRadioButtons.put(asp+INCOMPLETO, radioIncompleto);
 
             RadioButton radioBien = new RadioButton(this);
-            radioBien.setText("Bien");
+            radioBien.setText(BIEN);
+            mapaRadioButtons.put(asp+BIEN, radioBien);
 
             RadioButton radioRegular = new RadioButton(this);
-            radioRegular.setText("Regular");
+            radioRegular.setText(REGULAR);
+            mapaRadioButtons.put(asp+REGULAR, radioRegular);
 
             RadioButton radioMal = new RadioButton(this);
-            radioMal.setText("Mal");
+            radioMal.setText(MAL);
+            mapaRadioButtons.put(asp+MAL, radioMal);
 
             group.addView(radioIncompleto);
             group.addView(radioBien);
             group.addView(radioRegular);
             group.addView(radioMal);
+
+            mapaRadioGroups.put(asp, group);
 
             Button fotoVideo = new Button(this);
             fotoVideo.setText("Foto/Video");
