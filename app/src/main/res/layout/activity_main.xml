@@ -36,7 +36,9 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/editUsusario"
         android:singleLine="true"
-        android:gravity="center" />
+        android:gravity="center"
+        android:text="Adam"
+        android:background="#9db2d5" />
 
     <EditText
         android:layout_width="250dp"
@@ -47,10 +49,12 @@
         android:maxLength="20"
         android:singleLine="true"
         android:inputType="textPassword"
-        android:gravity="center" />
+        android:gravity="center"
+        android:text="Adam"
+        android:background="#9db2d5"/>
 
     <ImageButton
-        android:layout_width="120dp"
+        android:layout_width="110dp"
         android:layout_height="100dp"
         android:src="@drawable/tinynote_ingresar"
         android:scaleType="fitCenter"
