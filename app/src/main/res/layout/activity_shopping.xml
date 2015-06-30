@@ -23,7 +23,8 @@
         android:background="?attr/selectableItemBackground"
         android:src="@drawable/tinynote_volver"
         android:scaleType="fitCenter"
-        android:id="@+id/btn_volver"/>
+        android:id="@+id/btn_volver"
+        android:visibility="invisible" />
 
     <ImageButton
         android:layout_width="170dp"

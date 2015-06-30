@@ -61,4 +61,13 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/button_ingresar"/>
 
+    <ImageView
+        android:layout_width="85sp"
+        android:layout_height="85sp"
+        android:id="@+id/imageView"
+        android:src="@drawable/isologo_irsa"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        />
+
 </RelativeLayout>

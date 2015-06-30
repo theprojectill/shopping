@@ -25,6 +25,7 @@ public class Reportar extends ActionBarActivity
     private Spinner spinnerUbicaciones;
     public ImageButton btn_siguiente;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
