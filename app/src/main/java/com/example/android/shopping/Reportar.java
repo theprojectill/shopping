@@ -37,7 +37,7 @@ public class Reportar extends ActionBarActivity
         spinnerUbicaciones.setClickable(false);
 
         btn_siguiente = (ImageButton) findViewById(R.id.btn_siguiente);
-        btn_siguiente.setClickable(false);
+
         btn_siguiente.setOnClickListener (new View.OnClickListener()
         {
             @Override
@@ -50,6 +50,8 @@ public class Reportar extends ActionBarActivity
                 startActivity(cambiar);
             }
         });
+
+        btn_siguiente.setClickable(false);
 
         final ImageButton boton_volver = (ImageButton) findViewById(R.id.btn_volver);
         boton_volver.setOnClickListener (new View.OnClickListener()
@@ -82,6 +84,7 @@ public class Reportar extends ActionBarActivity
                         String textSector = parent.getItemAtPosition(position).toString();
                         List<String> ubicaciones = new UbicacionesDb().getUbicaciones(textSector);
                         ubicaciones.add(0, "Elija una ubicación...");
+
                         ArrayAdapter<String> ubicacionesAdapter =
                                 new ArrayAdapter<String>(Reportar.this, android.R.layout.simple_spinner_item, ubicaciones);
                         spinnerUbicaciones.setAdapter(ubicacionesAdapter);

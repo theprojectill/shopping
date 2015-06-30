@@ -65,7 +65,8 @@ public class Reportar2 extends ActionBarActivity
 
         ViewGroup container = (ViewGroup) this.findViewById(R.id.container);
 
-        for (String asp : aspectos) {
+        for (String asp : aspectos)
+        {
 
             LinearLayout tomaContainer = new LinearLayout(this);
 

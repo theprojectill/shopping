@@ -39,6 +39,8 @@ public class Shopping extends ActionBarActivity
             }
         });
 
+        siguintoso.setClickable(false);
+
         ImageButton btn_volver = (ImageButton) findViewById(R.id.btn_volver);
         btn_volver.setOnClickListener (new View.OnClickListener()
         {
@@ -75,16 +77,61 @@ public class Shopping extends ActionBarActivity
                 switch (position)
                 {
                     case 0:
+                        siguintoso.setClickable(false);
                         break;
 
                     case 1:
                         Toast t = Toast.makeText(getApplicationContext(), datosLista.get(position), Toast.LENGTH_LONG);
                         t.show();
+                        siguintoso.setClickable(true);
                         break;
 
                     case 2:
                         Toast po = Toast.makeText(getApplicationContext(), datosLista.get(position), Toast.LENGTH_LONG);
                         po.show();
+                        siguintoso.setClickable(true);
+                        break;
+
+                    case 3:
+                        Toast top = Toast.makeText(getApplicationContext(), datosLista.get(position), Toast.LENGTH_LONG);
+                        top.show();
+                        siguintoso.setClickable(true);
+                        break;
+
+                    case 4:
+                        Toast to = Toast.makeText(getApplicationContext(), datosLista.get(position), Toast.LENGTH_LONG);
+                        to.show();
+                        siguintoso.setClickable(true);
+                        break;
+
+                    case 5:
+                        Toast ta = Toast.makeText(getApplicationContext(), datosLista.get(position), Toast.LENGTH_LONG);
+                        ta.show();
+                        siguintoso.setClickable(true);
+                        break;
+
+                    case 6:
+                        Toast te = Toast.makeText(getApplicationContext(), datosLista.get(position), Toast.LENGTH_LONG);
+                        te.show();
+                        siguintoso.setClickable(true);
+                        break;
+
+                    case 7:
+                        Toast ti = Toast.makeText(getApplicationContext(), datosLista.get(position), Toast.LENGTH_LONG);
+                        ti.show();
+                        siguintoso.setClickable(true);
+                        break;
+
+                    case 8:
+                        Toast tu = Toast.makeText(getApplicationContext(), datosLista.get(position), Toast.LENGTH_LONG);
+                        tu.show();
+                        siguintoso.setClickable(true);
+                        break;
+
+                    case 9:
+                        Toast pu = Toast.makeText(getApplicationContext(), datosLista.get(position), Toast.LENGTH_LONG);
+                        pu.show();
+                        siguintoso.setClickable(true);
                         break;
                 }
             }

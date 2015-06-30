@@ -42,38 +42,38 @@ public class AspectosDb {
         }
         else if ("Plaza".equals(sector))
         {
-            String[] aspectos = {"Limpieza", "Pisos", "Vidrios", "Estado Cestos", "Estética Del Cableado",
+            String[] aspectos2 = {"Limpieza", "Pisos", "Vidrios", "Estado Cestos", "Estética Del Cableado",
                     "Señalética / Graficas", "Aromatización", "Fumigación", "Estado", "Observación"};
 
-            return new ArrayList<String>(Arrays.asList(aspectos));
+            return new ArrayList<String>(Arrays.asList(aspectos2));
         }
         else if ("Estacionamiento".equals(sector))
         {
-            String[] aspectos = {"Limpieza", "Pisos", "Vidrios", "Estado Cestos", "Estética Del Cableado",
+            String[] aspectos3 = {"Limpieza", "Pisos", "Vidrios", "Estado Cestos", "Estética Del Cableado",
                     "Señalética / Graficas", "Aromatización", "Fumigación", "Estado", "Observación"};
 
-            return new ArrayList<String>(Arrays.asList(aspectos));
+            return new ArrayList<String>(Arrays.asList(aspectos3));
         }
         else if ("Baños".equals(sector))
         {
-            String[] aspectos = {"Limpieza", "Pisos", "Barandas", "Vidrios", "Estado Cestos", "Estética Del Cableado",
+            String[] aspectos4 = {"Limpieza", "Pisos", "Barandas", "Vidrios", "Estado Cestos", "Estética Del Cableado",
                     "Señalética / Graficas", "Aromatización", "Fumigación", "Estado", "Observación"};
 
-            return new ArrayList<String>(Arrays.asList(aspectos));
+            return new ArrayList<String>(Arrays.asList(aspectos4));
         }
         else if ("Ascensor".equals(sector))
         {
-            String[] aspectos = {"Limpieza", "Pisos", "Barandas", "Vidrios", "Estética Del Cableado",
+            String[] aspectos5 = {"Limpieza", "Pisos", "Barandas", "Vidrios", "Estética Del Cableado",
                     "Señalética / Graficas", "Funcionamiento", "Aromatización", "Fumigación", "Estado", "Observación"};
 
-            return new ArrayList<String>(Arrays.asList(aspectos));
+            return new ArrayList<String>(Arrays.asList(aspectos5));
         }
         else if ("Escalera Mecánica".equals(sector))
         {
-            String[] aspectos = {"Limpieza", "Vidrios", "Estado Cestos", "Estética Del Cableado",
+            String[] aspectos6 = {"Limpieza", "Vidrios", "Estado Cestos", "Estética Del Cableado",
                     "Señalética / Graficas", "Funcionamiento", "Aromatización", "Estado", "Observación"};
 
-            return new ArrayList<String>(Arrays.asList(aspectos));
+            return new ArrayList<String>(Arrays.asList(aspectos6));
         }
 
         return null;
