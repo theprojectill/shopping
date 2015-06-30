@@ -23,7 +23,8 @@ public class Reportar extends ActionBarActivity
 {
     private Spinner spinnerSectores;
     private Spinner spinnerUbicaciones;
-    private ImageButton btn_siguiente;
+    public ImageButton btn_siguiente;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -35,6 +36,9 @@ public class Reportar extends ActionBarActivity
         spinnerUbicaciones = (Spinner)findViewById(R.id.spinner_ubicaciones);
 
         spinnerUbicaciones.setClickable(false);
+
+//        btn_siguiente.setClickable(false);
+//        btn_siguiente.setAlpha(130);
 
         btn_siguiente = (ImageButton) findViewById(R.id.btn_siguiente);
 
@@ -51,7 +55,7 @@ public class Reportar extends ActionBarActivity
             }
         });
 
-        btn_siguiente.setClickable(false);
+
 
         final ImageButton boton_volver = (ImageButton) findViewById(R.id.btn_volver);
         boton_volver.setOnClickListener (new View.OnClickListener()
@@ -66,7 +70,7 @@ public class Reportar extends ActionBarActivity
 
         List<String> sectores = new SectoresDb().getSectores();
         sectores.add(0, "Elija un sector...");
-        //TODO: Agregar la opcion "Elija un sector..."
+
         ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, sectores);
         spinnerSectores.setAdapter(adaptador);
 
@@ -78,6 +82,8 @@ public class Reportar extends ActionBarActivity
                     case 0:
                         spinnerUbicaciones.setAlpha(0);
                         spinnerUbicaciones.setClickable(false);
+
+
                         break;
 
                     default:
@@ -90,6 +96,30 @@ public class Reportar extends ActionBarActivity
                         spinnerUbicaciones.setAdapter(ubicacionesAdapter);
                         spinnerUbicaciones.setAlpha(1);
                         spinnerUbicaciones.setClickable(true);
+
+                        spinnerUbicaciones.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+                            @Override
+                            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                switch (position) {
+                                    case 0:
+                                        btn_siguiente.setClickable(false);
+                                         btn_siguiente.setAlpha(130);
+                                        break;
+
+                                    default:
+                                        btn_siguiente.setClickable(true);
+                                        btn_siguiente.setAlpha(255);
+                                        break;
+                                }
+                            }
+
+                            @Override
+                            public void onNothingSelected(AdapterView<?> parent) {
+
+                            }
+                        });
+
                         Toast t = Toast.makeText(getApplicationContext(), textSector, Toast.LENGTH_LONG);
                         t.show();
                         break;
@@ -101,6 +131,10 @@ public class Reportar extends ActionBarActivity
 
             }
         });
+
+
+
+
 
     }
 

@@ -31,6 +31,7 @@ public class Shopping extends ActionBarActivity
         siguintoso = (ImageButton) findViewById(R.id.btn_siguiente);
         siguintoso.setOnClickListener (new View.OnClickListener()
         {
+
             @Override
             public void onClick(View view)
             {
@@ -67,7 +68,15 @@ public class Shopping extends ActionBarActivity
 
         ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datosLista);
         lista.setAdapter(adaptador);
-
+        /*if (myItemShouldBeEnabled) {
+            item.setEnabled(true);
+            item.getIcon().setAlpha(255);
+        } else {
+            // disabled
+            item.setEnabled(false);
+            item.getIcon().setAlpha(130);
+        }
+        */
         lista.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
         {
 
@@ -78,60 +87,70 @@ public class Shopping extends ActionBarActivity
                 {
                     case 0:
                         siguintoso.setClickable(false);
+                        siguintoso.getDrawable().setAlpha(130);
                         break;
 
                     case 1:
                         Toast t = Toast.makeText(getApplicationContext(), datosLista.get(position), Toast.LENGTH_LONG);
                         t.show();
                         siguintoso.setClickable(true);
+                        siguintoso.getDrawable().setAlpha(255);
                         break;
 
                     case 2:
-                        Toast po = Toast.makeText(getApplicationContext(), datosLista.get(position), Toast.LENGTH_LONG);
+                        Toast po = Toast.makeText(getApplicationContext(), "No está disponible", Toast.LENGTH_LONG);
                         po.show();
-                        siguintoso.setClickable(true);
+                        siguintoso.setClickable(false);
+                        siguintoso.getDrawable().setAlpha(130);
                         break;
 
                     case 3:
-                        Toast top = Toast.makeText(getApplicationContext(), datosLista.get(position), Toast.LENGTH_LONG);
+                        Toast top = Toast.makeText(getApplicationContext(), "No está disponible", Toast.LENGTH_LONG);
                         top.show();
-                        siguintoso.setClickable(true);
+                        siguintoso.setClickable(false);
+                        siguintoso.getDrawable().setAlpha(130);
                         break;
 
                     case 4:
-                        Toast to = Toast.makeText(getApplicationContext(), datosLista.get(position), Toast.LENGTH_LONG);
+                        Toast to = Toast.makeText(getApplicationContext(), "No está disponible", Toast.LENGTH_LONG);
                         to.show();
-                        siguintoso.setClickable(true);
+                        siguintoso.setClickable(false);
+                        siguintoso.getDrawable().setAlpha(130);
                         break;
 
                     case 5:
-                        Toast ta = Toast.makeText(getApplicationContext(), datosLista.get(position), Toast.LENGTH_LONG);
+                        Toast ta = Toast.makeText(getApplicationContext(), "No está disponible", Toast.LENGTH_LONG);
                         ta.show();
-                        siguintoso.setClickable(true);
+                        siguintoso.setClickable(false);
+                        siguintoso.getDrawable().setAlpha(130);
                         break;
 
                     case 6:
-                        Toast te = Toast.makeText(getApplicationContext(), datosLista.get(position), Toast.LENGTH_LONG);
+                        Toast te = Toast.makeText(getApplicationContext(), "No está disponible", Toast.LENGTH_LONG);
                         te.show();
-                        siguintoso.setClickable(true);
+                        siguintoso.setClickable(false);
+                        siguintoso.getDrawable().setAlpha(130);
                         break;
 
                     case 7:
-                        Toast ti = Toast.makeText(getApplicationContext(), datosLista.get(position), Toast.LENGTH_LONG);
+                        Toast ti = Toast.makeText(getApplicationContext(), "No está disponible", Toast.LENGTH_LONG);
                         ti.show();
-                        siguintoso.setClickable(true);
+                        siguintoso.setClickable(false);
+                        siguintoso.getDrawable().setAlpha(130);
                         break;
 
                     case 8:
-                        Toast tu = Toast.makeText(getApplicationContext(), datosLista.get(position), Toast.LENGTH_LONG);
+                        Toast tu = Toast.makeText(getApplicationContext(), "No está disponible", Toast.LENGTH_LONG);
                         tu.show();
-                        siguintoso.setClickable(true);
+                        siguintoso.setClickable(false);
+                        siguintoso.getDrawable().setAlpha(130);
                         break;
 
                     case 9:
-                        Toast pu = Toast.makeText(getApplicationContext(), datosLista.get(position), Toast.LENGTH_LONG);
+                        Toast pu = Toast.makeText(getApplicationContext(), "No está disponible", Toast.LENGTH_LONG);
                         pu.show();
-                        siguintoso.setClickable(true);
+                        siguintoso.setClickable(false);
+                        siguintoso.getDrawable().setAlpha(130);
                         break;
                 }
             }
