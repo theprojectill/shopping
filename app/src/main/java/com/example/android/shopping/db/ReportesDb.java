@@ -24,9 +24,12 @@ public class ReportesDb {
 
         //TODO Código para guardar el reporte
 
+        //Registrar toma
+        // db.insert(idToma, idUsuario, fechaInicio, fechaFin, observaciones);
+
         for (String locacion : estadosDeLocaciones.keySet()) {
             Integer valor = estadosDeLocaciones.get(locacion);
-            //db.insert(...)
+            //db.insert(idToma, idEdificio, idSector, idUbicacion, valor);
         }
 
 
