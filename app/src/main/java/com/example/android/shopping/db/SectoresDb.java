@@ -11,7 +11,7 @@ public class SectoresDb {
 
     public List<String> getSectores() {
 
-        String[] sectores = {"Mall", "Estacionamiento", "Baños", "Ascensor", "Escalera Mecánica",
+        String[] sectores = {"Mall", "Plaza", "Estacionamiento", "Baños", "Ascensor", "Escalera Mecánica",
                 "Escalera Fija", "Rampa", "Cajero", "Telefonos", "Lockers", "Maquinas Expendedoras",
                 "Vereda", "Luces", "Puertas", "Publicidad", "Paco", "Pasillo", "Lcd's"};
 

@@ -45,7 +45,7 @@
             android:label="@string/title_activity_reportar2" >
         </activity>
         <activity
-            android:name=".Reportar3"
+            android:name=".Reportar2"
             android:label="@string/title_activity_reportar3" >
         </activity>
     </application>

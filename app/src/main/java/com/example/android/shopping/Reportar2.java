@@ -17,7 +17,7 @@ import android.widget.Toast;
 import com.example.android.shopping.db.AspectosDb;
 import java.util.List;
 
-public class Reportar3 extends ActionBarActivity
+public class Reportar2 extends ActionBarActivity
 {
     ImageButton btn_enviar;
 
@@ -42,7 +42,7 @@ public class Reportar3 extends ActionBarActivity
             public void onClick(View view)
             {
                 Toast.makeText(getApplicationContext(), "Incidente Enviado", Toast.LENGTH_SHORT).show();
-                Intent cambiar = new Intent(Reportar3.this, Inicio.class);
+                Intent cambiar = new Intent(Reportar2.this, Inicio.class);
                 startActivity(cambiar);
             }
         });
@@ -53,7 +53,12 @@ public class Reportar3 extends ActionBarActivity
             @Override
             public void onClick(View view)
             {
-                Intent cambiar = new Intent(Reportar3.this, Reportar.class);
+
+                //Todo Guardar reporte y mostrar mensaje de configuracion
+
+
+
+                Intent cambiar = new Intent(Reportar2.this, Reportar.class);
                 startActivity(cambiar);
             }
         });
