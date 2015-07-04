@@ -54,18 +54,19 @@
         android:background="#9db2d5"/>
 
     <ImageButton
-        android:layout_width="110dp"
-        android:layout_height="100dp"
+        android:layout_width="202dp"
+        android:layout_height="38dp"
         android:src="@drawable/tinynote_ingresar"
         android:scaleType="fitCenter"
         android:background="?attr/selectableItemBackground"
         android:layout_below="@+id/editContraseña"
         android:layout_centerHorizontal="true"
-        android:id="@+id/button_ingresar"/>
+        android:id="@+id/button_ingresar"
+        android:layout_marginTop="30dp" />
 
     <ImageView
-        android:layout_width="85sp"
-        android:layout_height="85sp"
+        android:layout_width="98sp"
+        android:layout_height="98sp"
         android:id="@+id/imageView"
         android:src="@drawable/isologo_irsa"
         android:layout_alignParentTop="true"
