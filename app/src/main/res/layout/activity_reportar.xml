@@ -49,7 +49,8 @@
         android:layout_alignParentStart="true"
         android:layout_marginBottom="137dp"
         android:clickable="false"
-        android:alpha="0" />
+        android:alpha="0"
+        android:background="#9db2d5" />
 
     <ImageButton
         android:layout_width="170dp"
@@ -70,6 +71,7 @@
         android:layout_marginTop="74dp"
         android:layout_below="@+id/txt_reportar"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:background="#9db2d5" />
 
 </RelativeLayout>
