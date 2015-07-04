@@ -29,7 +29,7 @@ public class Reportar2 extends ActionBarActivity
 
     ImageButton btn_enviar;
     HashMap<String, Integer> estadosDeLocaciones;
-    HashMap<String, RadioButton> mapaRadioButtons;
+    //HashMap<String, RadioButton> mapaRadioButtons;
     HashMap<String, RadioGroup> mapaRadioGroups;
 
     @Override
@@ -54,14 +54,14 @@ public class Reportar2 extends ActionBarActivity
             {
                 //TODO Recorrer los radio buttons seleccionados y guardar los valores en estados de locaciones
 
-                for (String aspecto : mapaRadioGroups.keySet()) {
+                /*for (String aspecto : mapaRadioGroups.keySet()) {
                     RadioGroup group = mapaRadioGroups.get(aspecto);
                     int idSeleccionado = group.getCheckedRadioButtonId();
 
                     if (idSeleccionado > 0) {
                         estadosDeLocaciones.put(aspecto, idSeleccionado);
                     }
-                }
+                }*/
 
                 ReportesDb reportesDb = new ReportesDb(getApplicationContext());
 
@@ -102,26 +102,26 @@ public class Reportar2 extends ActionBarActivity
             RadioButton radioIncompleto = new RadioButton(this);
             radioIncompleto.setText(INCOMPLETO);
             radioIncompleto.setSelected(true);
-            mapaRadioButtons.put(asp+INCOMPLETO, radioIncompleto);
+            //mapaRadioButtons.put(asp+INCOMPLETO, radioIncompleto);
 
             RadioButton radioBien = new RadioButton(this);
             radioBien.setText(BIEN);
-            mapaRadioButtons.put(asp+BIEN, radioBien);
+            //mapaRadioButtons.put(asp+BIEN, radioBien);
 
             RadioButton radioRegular = new RadioButton(this);
             radioRegular.setText(REGULAR);
-            mapaRadioButtons.put(asp+REGULAR, radioRegular);
+            //mapaRadioButtons.put(asp+REGULAR, radioRegular);
 
             RadioButton radioMal = new RadioButton(this);
             radioMal.setText(MAL);
-            mapaRadioButtons.put(asp+MAL, radioMal);
+            //mapaRadioButtons.put(asp+MAL, radioMal);
 
             group.addView(radioIncompleto);
             group.addView(radioBien);
             group.addView(radioRegular);
             group.addView(radioMal);
 
-            mapaRadioGroups.put(asp, group);
+            //mapaRadioGroups.put(asp, group);
 
             Button fotoVideo = new Button(this);
             fotoVideo.setText("Foto/Video");
