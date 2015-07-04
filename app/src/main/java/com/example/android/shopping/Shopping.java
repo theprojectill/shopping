@@ -87,7 +87,7 @@ public class Shopping extends ActionBarActivity
                 {
                     case 0:
                         siguintoso.setClickable(false);
-                        siguintoso.getDrawable().setAlpha(130);
+                        siguintoso.getDrawable().setAlpha(80);
                         break;
 
                     case 1:
@@ -101,56 +101,56 @@ public class Shopping extends ActionBarActivity
                         Toast po = Toast.makeText(getApplicationContext(), "No está disponible", Toast.LENGTH_LONG);
                         po.show();
                         siguintoso.setClickable(false);
-                        siguintoso.getDrawable().setAlpha(130);
+                        siguintoso.getDrawable().setAlpha(80);
                         break;
 
                     case 3:
                         Toast top = Toast.makeText(getApplicationContext(), "No está disponible", Toast.LENGTH_LONG);
                         top.show();
                         siguintoso.setClickable(false);
-                        siguintoso.getDrawable().setAlpha(130);
+                        siguintoso.getDrawable().setAlpha(80);
                         break;
 
                     case 4:
                         Toast to = Toast.makeText(getApplicationContext(), "No está disponible", Toast.LENGTH_LONG);
                         to.show();
                         siguintoso.setClickable(false);
-                        siguintoso.getDrawable().setAlpha(130);
+                        siguintoso.getDrawable().setAlpha(80);
                         break;
 
                     case 5:
                         Toast ta = Toast.makeText(getApplicationContext(), "No está disponible", Toast.LENGTH_LONG);
                         ta.show();
                         siguintoso.setClickable(false);
-                        siguintoso.getDrawable().setAlpha(130);
+                        siguintoso.getDrawable().setAlpha(80);
                         break;
 
                     case 6:
                         Toast te = Toast.makeText(getApplicationContext(), "No está disponible", Toast.LENGTH_LONG);
                         te.show();
                         siguintoso.setClickable(false);
-                        siguintoso.getDrawable().setAlpha(130);
+                        siguintoso.getDrawable().setAlpha(80);
                         break;
 
                     case 7:
                         Toast ti = Toast.makeText(getApplicationContext(), "No está disponible", Toast.LENGTH_LONG);
                         ti.show();
                         siguintoso.setClickable(false);
-                        siguintoso.getDrawable().setAlpha(130);
+                        siguintoso.getDrawable().setAlpha(80);
                         break;
 
                     case 8:
                         Toast tu = Toast.makeText(getApplicationContext(), "No está disponible", Toast.LENGTH_LONG);
                         tu.show();
                         siguintoso.setClickable(false);
-                        siguintoso.getDrawable().setAlpha(130);
+                        siguintoso.getDrawable().setAlpha(80);
                         break;
 
                     case 9:
                         Toast pu = Toast.makeText(getApplicationContext(), "No está disponible", Toast.LENGTH_LONG);
                         pu.show();
                         siguintoso.setClickable(false);
-                        siguintoso.getDrawable().setAlpha(130);
+                        siguintoso.getDrawable().setAlpha(80);
                         break;
                 }
             }

@@ -37,8 +37,7 @@ public class Reportar extends ActionBarActivity
 
         spinnerUbicaciones.setClickable(false);
 
-//        btn_siguiente.setClickable(false);
-//        btn_siguiente.setAlpha(130);
+
 
         btn_siguiente = (ImageButton) findViewById(R.id.btn_siguiente);
 
@@ -55,7 +54,8 @@ public class Reportar extends ActionBarActivity
             }
         });
 
-
+        btn_siguiente.setClickable(false);
+        btn_siguiente.setAlpha(80);
 
         final ImageButton boton_volver = (ImageButton) findViewById(R.id.btn_volver);
         boton_volver.setOnClickListener (new View.OnClickListener()
@@ -104,7 +104,7 @@ public class Reportar extends ActionBarActivity
                                 switch (position) {
                                     case 0:
                                         btn_siguiente.setClickable(false);
-                                         btn_siguiente.setAlpha(130);
+                                         btn_siguiente.setAlpha(80);
                                         break;
 
                                     default:

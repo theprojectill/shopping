@@ -12,32 +12,33 @@
 
     <ImageButton
         android:layout_gravity="end"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:src="@drawable/sincronizar"
         android:id="@+id/btn_sincronizar"
         android:scaleType="fitCenter"
-        android:background="?attr/selectableItemBackground"/>
+        android:background="?attr/selectableItemBackground"
+        android:adjustViewBounds="false" />
 
     <ImageButton
-        android:layout_width="180dp"
-        android:layout_height="130dp"
+        android:layout_width="190dp"
+        android:layout_height="140dp"
         android:src="@drawable/tinynote_comenzar_planilla"
         android:id="@+id/btn_comenzar_planilla"
         android:scaleType="fitCenter"
         android:layout_gravity="center"
         android:background="?attr/selectableItemBackground"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:clickable="false" />
 
     <ImageButton
-        android:layout_width="180dp"
-        android:layout_height="130dp"
+        android:layout_width="190dp"
+        android:layout_height="140dp"
         android:src="@drawable/tinynote_editar_planilla"
         android:id="@+id/btn_edit_planilla"
         android:scaleType="fitCenter"
         android:layout_gravity="center"
         android:background="?attr/selectableItemBackground"
-        android:layout_marginTop="80dp"/>
+        android:layout_marginTop="65dp"/>
 
 </LinearLayout>
