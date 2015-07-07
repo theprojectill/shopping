@@ -2,6 +2,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.android.shopping.Reportar2">
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
+    <item android:id="@+id/action_settings" android:title="Inicio"
         android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_settings1" android:title="Cambiar Usuario"
+        android:orderInCategory="101" app:showAsAction="never" />
+
 </menu>

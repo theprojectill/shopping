@@ -132,7 +132,7 @@ public class Reportar2 extends ActionBarActivity
                 {
 
 
-                    Toast.makeText(getApplicationContext(), "Daría a elegir entre CÁMARA o GALERÍA", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Se elegiría entre CÁMARA o GALERÍA", Toast.LENGTH_SHORT).show();
                 }
             });
 
@@ -163,12 +163,30 @@ public class Reportar2 extends ActionBarActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+        switch (item.getItemId()) {
+
+            case R.id.action_settings:
+                Intent cambiar = new Intent(Reportar2.this, Inicio.class);
+                startActivity(cambiar);
+                return true;
+            case R.id.action_settings1:
+                Intent cambiar1 = new Intent(Reportar2.this, MainActivity.class);
+                startActivity(cambiar1);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings)
+       /* if (id == R.id.action_settings)
         {
             return true;
+
+
         }
 
         return super.onOptionsItemSelected(item);
+*/
     }
 }

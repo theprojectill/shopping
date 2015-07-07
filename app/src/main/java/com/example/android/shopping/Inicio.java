@@ -72,13 +72,27 @@ public class Inicio extends ActionBarActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+        switch (item.getItemId()) {
+
+            case R.id.action_settings:
+                Intent cambiar = new Intent(Inicio.this, MainActivity.class);
+                startActivity(cambiar);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings)
+       /* if (id == R.id.action_settings)
         {
             return true;
+
+
         }
 
         return super.onOptionsItemSelected(item);
+*/
     }
 
 }

@@ -147,6 +147,7 @@ public class Reportar extends ActionBarActivity
         return true;
 
 
+
     }
 
     @Override
@@ -157,12 +158,31 @@ public class Reportar extends ActionBarActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+        switch (item.getItemId()) {
+
+            case R.id.action_settings:
+                Intent cambiar = new Intent(Reportar.this, Inicio.class);
+                startActivity(cambiar);
+                return true;
+            case R.id.action_settings1:
+                Intent cambiar1 = new Intent(Reportar.this, MainActivity.class);
+                startActivity(cambiar1);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings)
+       /* if (id == R.id.action_settings)
         {
             return true;
+
+
         }
 
         return super.onOptionsItemSelected(item);
+*/
+
     }
 }
