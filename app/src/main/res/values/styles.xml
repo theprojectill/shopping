@@ -3,6 +3,9 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
+        <item name="android:actionBarStyle">@color/material_blue_grey_800</item>
+        <!--<item name="android:actionBarTabTextStyle">@style/MyActionBarTabText</item>
+      <item name="android:actionMenuTextColor">@color/actionbar_text</item>-->
     </style>
 
 </resources>

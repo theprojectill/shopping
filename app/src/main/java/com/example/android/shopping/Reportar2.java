@@ -22,7 +22,7 @@ import java.util.List;
 
 public class Reportar2 extends ActionBarActivity
 {
-    private static final String INCOMPLETO = "Incompleto";
+    private static final String INCOMPLETO = "Incompl.";
     private static final String BIEN = "Bien";
     private static final String REGULAR = "Regular";
     private static final String MAL = "Mal";
@@ -125,6 +125,17 @@ public class Reportar2 extends ActionBarActivity
 
             Button fotoVideo = new Button(this);
             fotoVideo.setText("Foto/Video");
+            fotoVideo.setOnClickListener (new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View view)
+                {
+
+
+                    Toast.makeText(getApplicationContext(), "Daría a elegir entre CÁMARA o GALERÍA", Toast.LENGTH_SHORT).show();
+                }
+            });
+
 
             tomaContainer.addView(label);
             tomaContainer.addView(group);

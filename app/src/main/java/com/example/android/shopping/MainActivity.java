@@ -25,8 +25,9 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         final UsuariosDbManager manager = new UsuariosDbManager(this);
-        manager.insertar("Adam", "Adam");
-        manager.insertar("Eve", "Eve");
+        manager.insertar("adam", "adam");
+        manager.insertar("eve", "eve");
+        manager.insertar("admin", "admin");
 
 
 

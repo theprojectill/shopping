@@ -31,6 +31,28 @@ public class Inicio extends ActionBarActivity
                 startActivity(cambiar);
             }
         });
+
+        final ImageButton btn_sincronizar = (ImageButton) findViewById(R.id.btn_sincronizar);
+        btn_sincronizar.setOnClickListener (new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Toast.makeText(getApplicationContext(), "Acá se forzaría SINCRONIZAR", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        final ImageButton btn_edit_planilla = (ImageButton) findViewById(R.id.btn_edit_planilla);
+        btn_edit_planilla.setOnClickListener (new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Toast.makeText(getApplicationContext(), "Acá cambiaría a PANTALLA EDITAR", Toast.LENGTH_LONG).show();
+            }
+        });
+
+
     }
 
 

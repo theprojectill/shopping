@@ -17,7 +17,7 @@
         android:textSize="25dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="124dp" />
+        android:layout_marginTop="140dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -27,7 +27,7 @@
         android:textSize="25dp"
         android:layout_below="@+id/tviewUsuario"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="83dp" />
+        android:layout_marginTop="60dp" />
 
     <EditText
         android:layout_width="250dp"
@@ -37,7 +37,7 @@
         android:id="@+id/editUsusario"
         android:singleLine="true"
         android:gravity="center"
-        android:text="Adam"
+        android:text="admin"
         android:background="#9db2d5" />
 
     <EditText
@@ -50,7 +50,7 @@
         android:singleLine="true"
         android:inputType="textPassword"
         android:gravity="center"
-        android:text="Adam"
+        android:text="admin"
         android:background="#9db2d5"/>
 
     <ImageButton
@@ -65,8 +65,8 @@
         android:layout_marginTop="30dp" />
 
     <ImageView
-        android:layout_width="98sp"
-        android:layout_height="98sp"
+        android:layout_width="120sp"
+        android:layout_height="120sp"
         android:id="@+id/imageView"
         android:src="@drawable/isologo_irsa"
         android:layout_alignParentTop="true"

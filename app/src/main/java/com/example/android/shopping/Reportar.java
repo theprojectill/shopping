@@ -120,7 +120,7 @@ public class Reportar extends ActionBarActivity
                             }
                         });
 
-                        Toast t = Toast.makeText(getApplicationContext(), textSector, Toast.LENGTH_LONG);
+                        Toast t = Toast.makeText(getApplicationContext(), textSector, Toast.LENGTH_SHORT);
                         t.show();
                         break;
                 }
