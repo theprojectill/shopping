@@ -1,44 +1,50 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
-    tools:context="com.example.android.shopping.Inicio"
+    android:id="@+id/scrollView"
+    android:layout_gravity="center_horizontal"
     android:background="#e8f2ff">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:orientation="vertical"
+        tools:context="com.example.android.shopping.Inicio">
 
-    <ImageButton
-        android:layout_gravity="end"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/sincronizar"
-        android:id="@+id/btn_sincronizar"
-        android:scaleType="fitCenter"
-        android:background="?attr/selectableItemBackground"
-        android:adjustViewBounds="false" />
+        <ImageButton
+            android:layout_gravity="end"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/sincronizar"
+            android:id="@+id/btn_sincronizar"
+            android:scaleType="fitCenter"
+            android:background="?attr/selectableItemBackground"
+            android:adjustViewBounds="false" />
 
-    <ImageButton
-        android:layout_width="190dp"
-        android:layout_height="140dp"
-        android:src="@drawable/tinynote_comenzar_planilla"
-        android:id="@+id/btn_comenzar_planilla"
-        android:scaleType="fitCenter"
-        android:layout_gravity="center"
-        android:background="?attr/selectableItemBackground"
-        android:layout_marginTop="20dp"
-        android:clickable="false" />
+        <ImageButton
+            android:layout_width="190dp"
+            android:layout_height="140dp"
+            android:src="@drawable/tinynote_comenzar_planilla"
+            android:id="@+id/btn_comenzar_planilla"
+            android:scaleType="fitCenter"
+            android:layout_gravity="center"
+            android:background="?attr/selectableItemBackground"
+            android:layout_marginTop="20dp"
+            android:clickable="false" />
 
-    <ImageButton
-        android:layout_width="190dp"
-        android:layout_height="140dp"
-        android:src="@drawable/tinynote_editar_planilla"
-        android:id="@+id/btn_edit_planilla"
-        android:scaleType="fitCenter"
-        android:layout_gravity="center"
-        android:background="?attr/selectableItemBackground"
-        android:layout_marginTop="65dp"/>
+        <ImageButton
+            android:layout_width="190dp"
+            android:layout_height="140dp"
+            android:src="@drawable/tinynote_editar_planilla"
+            android:id="@+id/btn_edit_planilla"
+            android:scaleType="fitCenter"
+            android:layout_gravity="center"
+            android:background="?attr/selectableItemBackground"
+            android:layout_marginTop="65dp"/>
 
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

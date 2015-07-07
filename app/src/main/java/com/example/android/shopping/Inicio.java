@@ -38,7 +38,7 @@ public class Inicio extends ActionBarActivity
             @Override
             public void onClick(View view)
             {
-                Toast.makeText(getApplicationContext(), "Acá se forzaría SINCRONIZAR", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Acá se forzaría a SINCRONIZAR", Toast.LENGTH_LONG).show();
             }
         });
 
