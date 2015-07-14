@@ -21,7 +21,8 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_below="@+id/text_sector"
-        android:layout_above="@+id/btn_volver">
+        android:layout_above="@+id/btn_volver"
+        android:layout_marginTop="15dp">
 
         <ScrollView
             android:layout_width="match_parent"

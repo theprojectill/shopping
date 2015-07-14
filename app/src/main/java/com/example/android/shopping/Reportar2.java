@@ -1,8 +1,11 @@
 package com.example.android.shopping;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarActivity;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,6 +15,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.android.shopping.db.AspectosDb;
@@ -42,7 +46,8 @@ public class Reportar2 extends ActionBarActivity
         Intent intent = this.getIntent();
         String sector = intent.getStringExtra("SECTOR");
         String ubicacion = intent.getStringExtra("UBICACION");
-        textSector.setText(sector + " - " + ubicacion);
+        textSector.setText(sector + " : " + ubicacion);
+
 
         List<String> aspectos = new AspectosDb().getAspectos(sector, ubicacion);
 
@@ -67,7 +72,10 @@ public class Reportar2 extends ActionBarActivity
 
                 //reportesDb.guardarReporte(idUsuario, idEdificio, idSector, idUbicacion, estadosDeLocaciones);
 
-                Toast.makeText(getApplicationContext(), "Incidente Enviado", Toast.LENGTH_SHORT).show();
+                Toast toast = Toast.makeText(getApplicationContext(), "Enviando reporte...", Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+
                 Intent cambiar = new Intent(Reportar2.this, Inicio.class);
                 startActivity(cambiar);
             }
@@ -96,24 +104,30 @@ public class Reportar2 extends ActionBarActivity
 
             TextView label = new TextView(this);
             label.setText(asp);
+            label.setTextColor(Color.parseColor("#314361"));
+
             RadioGroup group = new RadioGroup(this);
-            group.setOrientation(LinearLayout.HORIZONTAL);
+            group.setOrientation(TableLayout.HORIZONTAL);
 
             RadioButton radioIncompleto = new RadioButton(this);
             radioIncompleto.setText(INCOMPLETO);
-            radioIncompleto.setSelected(true);
+            //group.check(group.getChildAt(0).getId());
+            //radioIncompleto.setChecked(true);
             //mapaRadioButtons.put(asp+INCOMPLETO, radioIncompleto);
 
             RadioButton radioBien = new RadioButton(this);
             radioBien.setText(BIEN);
+            //radioBien.setChecked(false);
             //mapaRadioButtons.put(asp+BIEN, radioBien);
 
             RadioButton radioRegular = new RadioButton(this);
             radioRegular.setText(REGULAR);
+            //radioRegular.setChecked(false);
             //mapaRadioButtons.put(asp+REGULAR, radioRegular);
 
             RadioButton radioMal = new RadioButton(this);
             radioMal.setText(MAL);
+            //radioMal.setChecked(false);
             //mapaRadioButtons.put(asp+MAL, radioMal);
 
             group.addView(radioIncompleto);
@@ -124,22 +138,35 @@ public class Reportar2 extends ActionBarActivity
             //mapaRadioGroups.put(asp, group);
 
             Button fotoVideo = new Button(this);
-            fotoVideo.setText("Foto/Video");
-            fotoVideo.setOnClickListener (new View.OnClickListener()
-            {
+            fotoVideo.setText("");
+            fotoVideo.setBackgroundResource(R.drawable.camera);
+            //fotoVideo.setBackgroundColor(Color.parseColor("#9dc7d5"));
+            fotoVideo.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view)
-                {
+                public void onClick(View view) {
 
 
                     Toast.makeText(getApplicationContext(), "Se elegiría entre CÁMARA o GALERÍA", Toast.LENGTH_SHORT).show();
                 }
             });
 
+            Button comment = new Button(this);
+            comment.setText("");
+            comment.setBackgroundResource(R.drawable.comment);
+
+            comment.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+
+                    Toast.makeText(getApplicationContext(), "Se insertaría un comentario", Toast.LENGTH_SHORT).show();
+                }
+            });
 
             tomaContainer.addView(label);
             tomaContainer.addView(group);
             tomaContainer.addView(fotoVideo);
+            tomaContainer.addView(comment);
 
             container.addView(tomaContainer);
         }
