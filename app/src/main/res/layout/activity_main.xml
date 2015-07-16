@@ -79,5 +79,24 @@
             android:layout_centerHorizontal="true"
             />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Código"
+            android:id="@+id/info"
+            android:textSize="15dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/button_ingresar"
+            android:layout_marginTop="10dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="https://github.com/theprojectill/shopping"
+            android:id="@+id/info2"
+            android:textSize="15dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/button_ingresar"
+            android:layout_marginTop="25dp" />
+
     </RelativeLayout>
 </ScrollView>
